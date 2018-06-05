@@ -58,3 +58,27 @@ More: https://www.zhihu.com/question/24368769
 
 ## Markdown导出pdf：
 1. princexml（收费），但是对中文支持似乎不好，来自Markdown Preview Enhance推荐。官网：https://www.princexml.com/
+
+## git
+### 1. git add 命令添加所有改动内容
+git add xx命令可以将xx文件添加到暂存区，如果有很多改动可以通过 git add -A .来一次添加所有改变的文件。
+
+注意 -A 选项后面还有一个句点。 git add -A表示添加所有内容， git add . 表示添加新文件和编辑过的文件不包括删除的文件; git add -u 表示添加编辑或者删除的文件，不包括新添加的文件。
+
+### 2. Git 提交时报错warning: LF will be replaced by CRLF in
+今天在自己的hexo博客上提交东西时 出现这样一段代码 warning: LF will be replaced by CRLF 虽然只是个warning 也还是可以提交，但是看着实在恶心啊，网上有很多解决办法 我看了下 还是把他们总结在这里吧，免得下次又忘了怎么解决了。
+
+方法一：
+配置选项修改 把core.autocrlf 设置成false
+``` bash
+git config –global core.autocrlf true #这个是转换，也是默认值
+git config –global core.autocrlf input #貌似是上库转换，从库中迁出代码不转换
+git config –global core.autocrlf false #这个一般是window上的，不转换
+```
+
+方法二：
+将你源文件中的CRLF转为LF，在window中都是CRLF 而在linux是LF 
+这时候会存在一个转换 
+上库的时候 通过git add . 手动转换 
+下载下来再重新转换 
+听说这个很麻烦，我也没搞懂，但是用了第一种方法之后我的问题反正时解决了的。
