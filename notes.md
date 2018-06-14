@@ -97,3 +97,21 @@ git remote add origin git@github.com:sheng/demo.git
 .git文件夹 --> config文件 --> 修改git remote origin地址
 
 方法四：通过第三方git客户端修改
+
+## 参数传递（*args, **kwargs）
+- 多个实参，放到一个元组里面,以*开头，可以传多个参数；**是形参中按照关键字传值把多余的传值以字典的方式呈现
+- *args：（表示的就是将实参中按照位置传值，多出来的值都给args，且以元祖的方式呈现）
+- 位置参数、*args、**kwargs三者的顺序必须是位置参数、*args、**kwargs，不然就会报错
+- 以下举例说明
+    ``` python
+    def foo(x, *args, **kwargs):
+        print(x)
+        print(args)
+        print(kwargs)
+        
+    >>> foo(1,2,3,4,5,y=2)
+    1
+    (2, 3, 4, 5)
+    {'y': 2}
+    ```
+- More: https://www.cnblogs.com/xuyuanyuan123/p/6674645.html
