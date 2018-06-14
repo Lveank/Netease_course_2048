@@ -82,3 +82,18 @@ git config –global core.autocrlf false #这个一般是window上的，不转�
 上库的时候 通过git add . 手动转换 
 下载下来再重新转换 
 听说这个很麻烦，我也没搞懂，但是用了第一种方法之后我的问题反正时解决了的。
+
+### 3.Git切换远程仓库地址
+方法一：修改命令<br>
+``` bash
+git remote set-url origin url
+```
+方法二：先删后加
+``` bash
+git remote rm origin
+git remote add origin git@github.com:sheng/demo.git
+```
+方法三：修改config文件<br>
+.git文件夹 --> config文件 --> 修改git remote origin地址
+
+方法四：通过第三方git客户端修改
