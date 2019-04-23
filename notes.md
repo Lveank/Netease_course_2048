@@ -98,6 +98,14 @@ git remote add origin git@github.com:sheng/demo.git
 
 方法四：通过第三方git客户端修改
 
+### 4.删除git远程库中已存在的文件,并且在本地保留
+1. 备份项目
+2. git rm --cached xxxx //从版本库中删除xxxx文件，但在工作目录中仍然保留。可以使用
+git rm -r --cached directory_name递归删除目录
+3. 在.gitignore中添加要忽略的文件
+4. 把修改的文件commit并且push到服务端
+5. 从git上重新拉取这个项目。
+
 ## 参数传递（*args, **kwargs）
 - 多个实参，放到一个元组里面,以*开头，可以传多个参数；**是形参中按照关键字传值把多余的传值以字典的方式呈现
 - *args：（表示的就是将实参中按照位置传值，多出来的值都给args，且以元祖的方式呈现）
